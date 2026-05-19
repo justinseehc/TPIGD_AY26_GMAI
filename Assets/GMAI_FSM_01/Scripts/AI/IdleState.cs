@@ -6,6 +6,7 @@ public class IdleState : State
 
     public override void Enter()
     {
+        ai.animator.SetBool("Idle", true);
         Debug.Log("Idle: Enter");
     }
 
@@ -20,6 +21,7 @@ public class IdleState : State
 
     public override void Exit()
     {
+        ai.animator.SetBool("Idle", false);
         Debug.Log("Idle: Exit");
     }
 }

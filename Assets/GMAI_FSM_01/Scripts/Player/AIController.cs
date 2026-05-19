@@ -11,6 +11,8 @@ public class AIController : MonoBehaviour
     public float detectionRange = 10f;
     public float moveSpeed = 2f;
 
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
