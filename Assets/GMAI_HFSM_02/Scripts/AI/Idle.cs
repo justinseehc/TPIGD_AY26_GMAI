@@ -13,9 +13,9 @@ namespace HFSM
         public Idle(HFSM fsm) : base(fsm)
         {
             resting = new Resting(fsm);
-            lookingAround = new LookingArround(fsm);
-            resting.OnDone() += HandleSubstateDone;
-            lookingAround.OnDone() += HandleSubstateDone;
+            lookingAround = new LookingAround(fsm);
+            resting.OnDone += HandleSubstateDone;
+            lookingAround.OnDone += HandleSubstateDone;
         }
 
         public override void OnEnter()
@@ -36,7 +36,7 @@ namespace HFSM
             base.OnExit();
         }
 
-        private void HandleSustateDone()
+        private void HandleSubstateDone()
         {
             SetSubstate(Random.value > 0.5f ? resting : lookingAround);
         }

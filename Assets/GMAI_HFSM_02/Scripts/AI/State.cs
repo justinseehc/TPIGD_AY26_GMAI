@@ -8,7 +8,7 @@ namespace HFSM
     public abstract class State
     {
         protected HFSM fsm;
-        public Action OnDone();
+        public Action OnDone;
 
         public State(HFSM fsm) { this.fsm = fsm; }
 
